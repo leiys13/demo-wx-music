@@ -1,0 +1,70 @@
+<scroll-view class="content-info" scroll-y>
+  <swiper class="content-info-slide" indicator-color="rgba(255, 255, 255, .5)" indicator-active-color="#fff" indicator-dots circular autoplay>
+    <swiper-item>
+      <image src="/images/1.jpg"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/2.jpg"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/3.jpg"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="content-info-portal">
+    <view>
+      <image src="/images/4.jpg" />
+      <text>私人FM</text>
+    </view>
+    <view>
+      <image src="/images/4.jpg" />
+      <text>每日歌曲推荐</text>
+    </view>
+    <view>
+      <image src="/images/4.jpg" />
+      <text>云音乐新歌版</text>
+    </view>
+  </view>
+
+  <view class="content-info-list">
+    <view class="list-title">推荐歌曲</view>
+    <view class="list-inner">
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>最想念的季节</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>齐天</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>追梦赤子心</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>匆匆那年</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>无问西东</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>可惜没如果</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>江南</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>断桥残雪</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>光辉岁月</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
