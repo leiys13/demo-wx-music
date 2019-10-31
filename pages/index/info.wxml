@@ -31,7 +31,11 @@
     <view class="list-inner">
       <view class="list-item">
         <image src="/images/4.jpg" />
-        <view>最想念的季节</view>
+        <view>无问西东</view>
+      </view>
+      <view class="list-item">
+        <image src="/images/4.jpg" />
+        <view>断桥残雪</view>
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
@@ -39,19 +43,15 @@
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
-        <view>追梦赤子心</view>
+        <view>天仙子</view>
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
-        <view>匆匆那年</view>
+        <view>酸酸甜甜就是我</view>
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
-        <view>无问西东</view>
-      </view>
-      <view class="list-item">
-        <image src="/images/4.jpg" />
-        <view>可惜没如果</view>
+        <view>寂寞沙洲冷</view>
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
@@ -59,7 +59,7 @@
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
-        <view>断桥残雪</view>
+        <view>追梦赤子心</view>
       </view>
       <view class="list-item">
         <image src="/images/4.jpg" />
