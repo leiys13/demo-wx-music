@@ -89,8 +89,70 @@ page {
   margin: 0 auto;
   font-size: 10pt;
 }
-
-
+.content-play {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+.content-play-info > view {
+  color: #888;
+  font-size: 11pt;
+}
+.content-play-cover image {
+  animation: rotateImage 10s linear infinite;
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+  border: 1px solid #333;
+}
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.content-play-progress {
+  display: flex;
+  align-items: center;
+  margin: 0 35rpx;
+  font-size: 9pt;
+  text-align: center;
+}
+.content-play-progress > view {
+  flex: 1;
+}
+.playlist-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #333;
+  height: 112rpx;
+}
+.playlist-cover {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 15rpx;
+  border-radius: 8rpx;
+  border: 1px solid #333;
+}
+.playlist-info {
+  flex: 1;
+  font-size: 10pt;
+  line-height: 38rpx;
+  margin-left: 20rpx;
+  padding-bottom: 8rpx;
+}
+.playlist-info-singer {
+  color: #888;
+}
+.playlist-controls {
+  font-size: 10pt;
+  margin-right: 20rpx;
+  color: #c25b5b;
+}
 .player {
   display: flex;
   align-items: center;

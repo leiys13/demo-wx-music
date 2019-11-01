@@ -22,16 +22,16 @@
 
 <!-- 底部播放器 -->
 <view class="player">
-  <image class="player-cover" src="{{ playInfo.converImg }}"/>
+  <image class="player-cover" src="{{ playInfo.coverImg }}"/>
   <view class="player-info">
     <view class="player-info-name">{{ playInfo.name }}</view>
     <view class="player-info-singer">{{ playInfo.singer }}</view>
   </view>
   <view class="player-controls">
-    <image src="/images/4.jpg" bindtap="changeItem" data-item="2"/>
+    <image src="/images/list.png" bindtap="changeItem" data-item="2"/>
     
-    <image wx:if="{{ state=='paused' }}" src="/images/2.jpg" bindtap="play"/>
-    <image wx:else src="/images/4.jpg" bindtap="pause"/>
+    <image wx:if="{{ state=='paused' }}" src="/images/play.png" bindtap="play"/>
+    <image wx:else src="/images/pause.png" bindtap="pause"/>
     
     <image src="/images/4.jpg" bindtap="next"/>
   </view>

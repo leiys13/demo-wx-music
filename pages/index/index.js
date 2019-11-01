@@ -53,7 +53,7 @@ Page({
       percent: 0,
       name: '',
       singer: '',
-      converImg: '/images/4.jpg'
+      coverImg: '/images/4.jpg'
     }
   },
 
@@ -68,13 +68,40 @@ Page({
    */
   onReady: function() {
     this.audio = wx.createInnerAudioContext()
+    var that = this
+    // 播放失败
+    that.audio.onError(function() {
+      console.log('播放失败：', that.audio.src)
+    })
+    // 播放完成自动换下一曲
+    that.audio.onEnded(function() {
+      that.next()
+    })
+    // 自动更新播放进度
+    that.audio.onPlay(function() {})
+    that.audio.onTimeUpdate(function() {
+      that.setData({
+        'playInfo.duration': formatTime(that.audio.duration),
+        'playInfo.currentTime': formatTime(that.audio.currentTime),
+        'playInfo.percent': that.audio.currentTime / that.audio.duration * 100
+      })
+    })
+    // 默认选择第1曲
     this.setMusic(0)
+    // 格式化时间
+    function formatTime(time) {
+      var minute = Math.floor(time / 60) % 60
+      var second = Math.floor(time) % 60
+      return (minute < 10 ? '0' + minute : minute) + ':' + (second < 10 ? '0' + second : second)
+    }
   },
 
   /**
    * 事件类函数
    * changeItem：点击顶部标签栏事件处理
    * changeTab：顶部标签栏事件切换事件处理
+   * sliderChange：音乐播放进度条变化事件处理
+   * changeMusic：播放列表点击音乐事件处理
    * play：播放音乐按钮点击事件处理
    * pause：暂停音乐播放按钮点击事件处理
    * next：下一首按钮点击事件处理
@@ -96,11 +123,26 @@ Page({
     this.setData({tab: e.detail.current})
   },
   /**
+   * 音乐播放进度条变化事件处理
+   */
+  sliderChange: function(e) {
+    var second = e.detail.value * this.audio.duration / 100
+    this.audio.seek(second)
+  },
+  /**
+   * 播放列表点击音乐事件处理
+   */
+  changeMusic: function(e) {
+    this.setMusic(e.currentTarget.dataset.index)
+    this.play()
+  },
+  /**
    * 播放音乐按钮点击事件处理
    */
   play: function() {
     this.audio.play()
     this.setData({state: 'running'})
+    console.log('播放：', this.data.playInfo.name, '-', this.data.playInfo.singer)
   },
   /**
    * 暂停音乐播放按钮点击事件处理
@@ -135,7 +177,7 @@ Page({
       playIndex: index,
       'playInfo.name': music.name,
       'playInfo.singer': music.singer,
-      'playInfo.converImg': music.img,
+      'playInfo.coverImg': music.img,
       'playInfo.currentTime': '00:00',
       'playInfo.duration': '00:00',
       'playInfo.percent': 0
